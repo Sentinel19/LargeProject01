@@ -28,6 +28,10 @@ OBJS = \
 	uart.o\
 	vectors.o\
 	vm.o\
+	dhello.o\
+	zero.o\
+	null.o\
+	ticks.o\
 
 # Cross-compiling (e.g., on Mac OS X)
 # TOOLPREFIX = i386-jos-elf
@@ -197,6 +201,10 @@ UPROGS=\
 	_nice\
 	_testflock\
 	_priorInv\
+	_testdevhello\
+	_testdevzero\
+	_testdevnull\
+	_testdevticks\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -243,7 +251,7 @@ QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
 	then echo "-gdb tcp::$(GDBPORT)"; \
 	else echo "-s -p $(GDBPORT)"; fi)
 ifndef CPUS
-CPUS := 1
+CPUS := 2
 endif
 QEMUOPTS = -device isa-debug-exit -drive file=$(FS),index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp $(CPUS) -m 512 $(QEMUEXTRA)
 

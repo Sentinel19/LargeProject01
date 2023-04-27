@@ -212,6 +212,7 @@ SYSCALL(flock)
  124:	c3                   	ret    
 
 00000125 <funlock>:
+SYSCALL(funlock)
  125:	b8 1a 00 00 00       	mov    $0x1a,%eax
  12a:	cd 40                	int    $0x40
  12c:	c3                   	ret    

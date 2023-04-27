@@ -670,6 +670,7 @@ SYSCALL(flock)
  3ee:	c3                   	ret    
 
 000003ef <funlock>:
+SYSCALL(funlock)
  3ef:	b8 1a 00 00 00       	mov    $0x1a,%eax
  3f4:	cd 40                	int    $0x40
  3f6:	c3                   	ret    

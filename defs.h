@@ -23,6 +23,18 @@ void            cprintf(char*, ...);
 void            consoleintr(int(*)(void));
 void            panic(char*) __attribute__((noreturn));
 
+//dhello.c
+void helloinit(void);
+
+//zero.c
+void zeroinit(void);
+
+//null.c
+void nullinit(void);
+
+//ticks.c
+void ticksinit(void);
+
 // exec.c
 int             exec(char*, char**);
 
